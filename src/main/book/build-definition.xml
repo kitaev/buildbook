@@ -1,0 +1,78 @@
+<section id="build" xmlns="http://docbook.org/ns/docbook">
+
+ <title>What is a Build</title>
+ <para>In a book on Builds, first question we have to give an answer to is what is Build? Let's start
+  with a few generic figures and definitions.</para>
+ <figure>
+  <title>Build Process</title>
+  <graphic fileref="images/build-1.png" />
+ </figure>
+
+ <variablelist>
+  <varlistentry>
+   <term>Build Process or Build</term>
+   <listitem>
+    <para>A process that takes input and produces output accordingly to
+     a specific instructions.</para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Build Artifact</term>
+   <listitem>
+    <para>Build process output item, usually a file.</para>
+   </listitem>
+  </varlistentry>
+ </variablelist>
+
+ <para>Looks more or less straightforward and simple so far, but not too meaningful. Let's take a closer look at how a concrete instance of Build Process may
+  look like:</para>
+ <figure>
+  <title>Build Process Instance</title>
+  <graphic fileref="images/build-2.png" />
+ </figure>
+ <para>
+  In the diagram above, blue arrows shows build process input items, and orange arrows connects build artifacts with the producing process. Any
+  build
+  process could be uniquely identified with a few properties and set of its input elements.</para>
+
+ <itemizedlist>
+  <title>Build Process Properties</title>
+  <listitem>Time the build was started</listitem>
+  <listitem>Given name</listitem>
+ </itemizedlist>
+
+ <itemizedlist>
+  <title>Build Process Input</title>
+  <listitem>Environment in which process is executed</listitem>
+  <listitem>Build process instructions</listitem>
+  <listitem>Optional source files and binary artifacts</listitem>
+ </itemizedlist>
+
+ <para>
+  Note, that at this point we make no principal difference between build environment, build instructions and other kinds of build input, but
+  rather stress
+  the fact that all these elements are parts of the build input set. Each element of that set could be referenced by
+  or described with an unique identifier.
+ </para>
+
+ <para>Thus, it is possible to identify any Build Process Instance with an unique identifier as well:</para>
+ <variablelist>
+  <varlistentry>
+   <term>
+    Build Process ID = Build Process Properties + (Build Input Item
+    <subscript>1</subscript>
+    ID, ..., Build Input Item
+    <subscript>n</subscript>
+    ID)
+   </term>
+  </varlistentry>
+ </variablelist>
+
+ <para>In practice, much shorted identifiers might be and are used, or some part of the full identifier might be omitted with
+  no side effects. However, one have
+  to keep in mind that such shortened identifiers are unique only in certain
+  context which is either limited or implicitly includes omitted information.</para>
+
+ <para>Last note in this section is that, for brevity, Build Process Instance and Build terms are considered synonyms in this book.
+  </para>
+</section>

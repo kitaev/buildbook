@@ -1,0 +1,35 @@
+<section id="build-requirements" xmlns="http://docbook.org/ns/docbook">
+
+ <title>Build Process Requirements</title>
+ 
+ <para>Now, when we have defined what Build is, we may proceed to the 
+ definition of a Good Build. Listed below are qualities of a Good Build along 
+ with some practical benefits shown:</para>
+  <variablelist>
+  <varlistentry>
+   <term>Traceability of artifacts</term>
+   <listitem>
+    <para></para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Environment adaptable</term>
+   <listitem>
+    <para></para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Atomic results</term>
+   <listitem>
+    <para></para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Minimal input diversity</term>
+   <listitem>
+    <para></para>
+   </listitem>
+  </varlistentry>
+ </variablelist>
+ 
+</section>

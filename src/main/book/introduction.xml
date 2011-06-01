@@ -1,0 +1,26 @@
+<chapter id="introduction" xmlns="http://docbook.org/ns/docbook">
+ <title>Introduction</title>
+ 
+ <para>This book is an attempt to fill the gap in the information available on
+  the craft of Software Build Management. There are of course plenty of documentation 
+  on particular builds tools as well as information on how to resolve particular problems
+  of these tools. Of course there is no need to undervalue this sort of resources.</para>
+
+ <para>Sometimes, however, a different perspective is wanted. When one decides to create a build
+  and component management infrastructure, often the first thing needed is a good problem domain
+  analyzes. As there are many tools exist destined to solve the same problem, it is beneficial 
+  to define the problem and desired solution in a tool-independent way and only then to choose 
+  most appropriate concrete solution.
+</para>
+
+<para>This books uses this approach. First we will explore the problem domain and provide necessary
+definitions. Then we will define what components composes build and component management system. Finally
+we will state qualities a good build management system have to possess.</para> 
+
+<para>On that theoretical foundation we will learn how to build a practical system. We will investigate
+existing build tools, seeing how does particular tool fits into the general blueprint of a build management 
+system and how much of the theoretical requirements we have defined it fulfills.</para>
+
+<para>Real world build management system case study concludes this book, so that reader may see what
+sort of problems arises in the real life and how theory corresponds with the practice.</para> 
+</chapter>

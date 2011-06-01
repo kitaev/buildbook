@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<book xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0">
+    <bookinfo>
+        <title>Software Builds Book (draft)</title>
+        <subtitle>Beautiful Builds</subtitle>
+        <releaseinfo/>
+        <copyright>
+            <year>2011</year>
+            <holder>Alexander Kitaev</holder>
+        </copyright>
+        <legalnotice>
+            <para>This work is licensed under a <link xl:href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</link>.
+            </para>
+        </legalnotice>
+        <author>
+            <firstname>Alexander</firstname>
+            <surname>Kitaev</surname>
+        </author>
+    </bookinfo>   
+
+    <xi:include href='introduction.xml'/>
+
+    <chapter id="theory">
+    <title>Theory</title>
+    <xi:include href='build-definition.xml'/>
+    <xi:include href='build-requirements.xml'/>
+    <xi:include href='build-infrastructure.xml'/>
+    </chapter>
+
+    <chapter id="practice">
+    <title>Practice</title>
+    <para>To be continued...</para>
+    </chapter>
+
+</book>

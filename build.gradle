@@ -1,0 +1,72 @@
+group = 'org.tmatesoft.buildsbook'
+version = '0.0.1'
+release = false
+
+buildscript {
+    apply from: 'build.defaults.gradle'
+    repositories {
+        mavenRepo(urls: [buildPluginRepositoryURL]) {
+            snapshotTimeout = org.gradle.api.internal.artifacts.ivyservice.GradleIBiblioResolver.ALWAYS
+        }
+    }
+    dependencies { classpath 'org.tmatesoft.build:build:0.9.7-SNAPSHOT' }
+}
+
+configurations {
+    bookGeneration
+    bookGenerationStylesheets
+}
+
+dependencies {
+    bookGeneration 'xalan:xalan:2.7.1', 'xerces:xercesImpl:2.9.1'
+    bookGenerationStylesheets 'net.sf.docbook:docbook-xsl:1.76.1:resources@zip'
+}
+
+task wrapper(type: Wrapper) {}
+
+apply plugin : 'base'
+apply plugin : 'build'  
+apply plugin : 'eclipse'
+
+task stylesheets(type: Copy) {
+   into buildDir
+   from (zipTree(configurations.bookGenerationStylesheets.singleFile))
+
+   into ('docbook') {
+      from ('src/main/stylesheets') {
+         include '**/*.xsl'
+      }
+   }
+}
+
+task build(dependsOn: stylesheets) << {
+   File outDirectory = new File(buildDir, 'distribution')
+   File bookInFile = new File('src/main/book/book.xml')
+   File bookOutFile = new File(outDirectory, 'book.html')
+   File bookXslFile = new File(buildDir, 'docbook/userGuideSingleHtml.xsl')
+
+   outDirectory.mkdirs()   
+   
+   javaexec {
+      main = 'org.apache.xalan.xslt.Process'
+      classpath configurations.bookGeneration
+      systemProperty 'org.apache.xerces.xni.parser.XMLParserConfiguration', 'org.apache.xerces.parsers.XIncludeParserConfiguration'
+
+      args '-out', bookOutFile.absolutePath
+      args '-in', bookInFile.absolutePath
+      args '-xsl', bookXslFile.absolutePath
+      args '-param', 'book.version', version
+   }
+
+   copy {
+      into outDirectory
+      from 'src/main/css'
+      include '**/*.css'
+   }
+
+   copy {
+      into outDirectory
+      from 'src/main/book'
+      include 'images/**'
+   }
+}
