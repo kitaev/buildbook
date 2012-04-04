@@ -1,4 +1,3 @@
-// build script
 group = 'org.tmatesoft.buildsbook'
 version = '0.0.1'
 release = false
